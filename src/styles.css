@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+/* Root colors */
+:root {
+  --navy: #0A192F;
+  --charcoal: #1B1F23;
+  --light-charcoal: #394867;
+  --light-gray: #E6E8EA;
+  --white: #F9FAFB;
+  --dull-white: #D1D5DB;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bg-header {
+  background-color: var(--navy);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: var(--white);
+
+}
+
+.logo-image {
+  width: 5em;
+}

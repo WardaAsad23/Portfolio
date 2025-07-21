@@ -1,0 +1,30 @@
+
+<nav class="navbar navbar-expand-lg fixed-top theme-navbar pt-3" id="mainNav">
+  <a class="navbar-brand logo" [routerLink]="['/home']">
+    <img src="logo.png" alt="Logo" class="logo-image" />
+  </a>
+  <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="collapse navbar-collapse d-flex align-items-center" id="navbarResponsive">
+    <div class="custom-navbar">
+        <ul class="navbar-nav flex-grow-1 justify-content-center">
+      <li class="nav-item mx-2">
+        <a class="nav-link nav-link-custom" [routerLink]="['/home']" routerLinkActive="active-tab">Home</a>
+      </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link nav-link-custom" [routerLink]="['/about']" routerLinkActive="active-tab">About</a>
+      </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link nav-link-custom" [routerLink]="['/contact']" routerLinkActive="active-tab">Contact</a>
+      </li>
+    </ul>
+    </div>
+    
+    <div class="navbar-icons ms-auto">
+      <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+</nav>
