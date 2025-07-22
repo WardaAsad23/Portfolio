@@ -43,5 +43,6 @@ ngx-particles {
   width: 100vw !important;
   height: 100vh !important;
   z-index: -1 !important;
+  pointer-events: none;
 }
 
