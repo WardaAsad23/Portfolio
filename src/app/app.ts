@@ -14,76 +14,49 @@ export class App {
 
  particlesOptions = {
   background: {
-    color: { value: '#000' }
-  },
-  fpsLimit: 60,
-  interactivity: {
-    events: {
-      onClick: {
-        enable: true,
-        mode: 'push' // ✅ use string instead of ClickMode.push
-      },
-      onHover: {
-        enable: true,
-        mode: 'repulse' // ✅ use string instead of HoverMode.repulse
-      },
-      resize: {
-  enable: true
-}
+    color: {
+      value: "#000000",
     },
-    modes: {
-      push: {
-        quantity: 4
-      },
-      repulse: {
-        distance: 100,
-        duration: 0.4
-      }
-    }
   },
   particles: {
-    color: {
-      value: '#ffffff'
-    },
-    links: {
-      color: '#ffffff',
-      distance: 150,
-      enable: true,
-      opacity: 0.4,
-      width: 1
-    },
-    collisions: {
-      enable: false
-    },
-    move: {
-      direction: 'none' as const, // ✅ use string
-      enable: true,
-      outModes: {
-        default: 'bounce' as const // ✅ use string
-      },
-      random: false,
-      speed: 2,
-      straight: false
-    },
     number: {
-      density: {
-        enable: true,
-        area: 800
-      },
-      value: 80
+      value: 80,
     },
-    opacity: {
-      value: 0.5
+    color: {
+      value: "#ffffff",
     },
     shape: {
-      type: 'circle'
+      type: "circle",
+    },
+    opacity: {
+      value: 0.5,
     },
     size: {
-      value: { min: 1, max: 5 }
-    }
+      value: 3,
+    },
+    move: {
+      enable: true,
+      speed: 1,
+    },
+    links: {
+      enable: true,
+      distance: 150,
+      color: "#ffffff",
+      opacity: 0.4,
+      width: 1,
+    },
   },
-  detectRetina: true
+  interactivity: {
+    events: {
+      onHover: {
+        enable: true,
+        mode: "repulse",
+      },
+    },
+  },
+  detectRetina: true,
 };
+
 
 
   onParticlesLoaded(container: any): void {

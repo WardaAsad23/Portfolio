@@ -39,11 +39,11 @@ html, body {
 
 ngx-particles {
   position: fixed !important;
-  top: 0;
-  left: 0;
   width: 100vw !important;
   height: 100vh !important;
   z-index: -1 !important;
+  top: 0;
+  left: 0;
   pointer-events: none;
 }
 
