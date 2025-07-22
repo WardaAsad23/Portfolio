@@ -1,6 +1,5 @@
 
 import { Component } from '@angular/core';
-import { NgxParticlesModule } from '@tsparticles/angular';
 
 @Component({
   selector: 'app-home',

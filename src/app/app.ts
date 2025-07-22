@@ -1,76 +1,31 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { NgxParticlesModule } from '@tsparticles/angular';
-
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgxParticlesModule],
   standalone: true,
+  imports: [RouterOutlet, NgxParticlesModule, CommonModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
   protected title = 'Portfolio';
 
- particlesOptions: any = {
-  background: {
-    color: {
-      value: '#000000',
-    },
-  },
-  particles: {
-    number: {
-      value: 50,
-    },
-    color: {
-      value: '#ffffff',
-    },
-    shape: {
-      type: 'circle',
-    },
-    opacity: {
-      value: 0.5,
-    },
-    size: {
-      value: 3,
-    },
-    move: {
-      enable: true,
-      speed: 1,
-    },
-    links: {
-      enable: true,
-      distance: 150,
-      color: '#ffffff',
-      opacity: 0.4,
-      width: 1,
-    },
-  },
-  interactivity: {
-    events: {
-      onHover: {
+ particlesOptions = {
+    particles: {
+      number: { value: 80 },
+      size: { value: 3 },
+      move: { enable: true, speed: 2 },
+      shape: { type: 'circle' },
+      links: {
         enable: true,
-        mode: 'repulse',
-      },
-      onClick: {
-        enable: true,
-        mode: 'push',
-      },
-      resize: true,
-    },
-    modes: {
-      repulse: {
-        distance: 100,
-      },
-      push: {
-        quantity: 4,
+        distance: 150,
+        color: '#ffffff',
+        opacity: 0.4,
+        width: 1,
       },
     },
-  },
-  detectRetina: true,
-};
-
-  onParticlesLoaded(container: any): void {
-  console.log('Particles loaded:', container);
-}
+    detectRetina: true,
+  };
 }
