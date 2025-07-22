@@ -12,21 +12,21 @@ import { NgxParticlesModule } from '@tsparticles/angular';
 export class App {
   protected title = 'Portfolio';
 
- particlesOptions = {
+ particlesOptions: any = {
   background: {
     color: {
-      value: "#000000",
+      value: '#000000',
     },
   },
   particles: {
     number: {
-      value: 80,
+      value: 50,
     },
     color: {
-      value: "#ffffff",
+      value: '#ffffff',
     },
     shape: {
-      type: "circle",
+      type: 'circle',
     },
     opacity: {
       value: 0.5,
@@ -41,7 +41,7 @@ export class App {
     links: {
       enable: true,
       distance: 150,
-      color: "#ffffff",
+      color: '#ffffff',
       opacity: 0.4,
       width: 1,
     },
@@ -50,14 +50,25 @@ export class App {
     events: {
       onHover: {
         enable: true,
-        mode: "repulse",
+        mode: 'repulse',
+      },
+      onClick: {
+        enable: true,
+        mode: 'push',
+      },
+      resize: true,
+    },
+    modes: {
+      repulse: {
+        distance: 100,
+      },
+      push: {
+        quantity: 4,
       },
     },
   },
   detectRetina: true,
 };
-
-
 
   onParticlesLoaded(container: any): void {
   console.log('Particles loaded:', container);
