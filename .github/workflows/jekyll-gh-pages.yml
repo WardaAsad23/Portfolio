@@ -3,39 +3,43 @@ name: Deploy Angular App to GitHub Pages
 on:
   push:
     branches:
-      - main  # deploy only when pushing to main
+      - main   # Runs when pushing to main branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repository
+      # 1. Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 2. Setup Node.js (Angular 20+ uses Node 18+)
+      # 2. Setup Node.js (use Node 20 for Angular 20+)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      # 3. Install dependencies
+      # 3. Install project dependencies
       - name: Install Dependencies
         run: npm ci
 
-      # 4. Build Angular App for GitHub Pages
+      # 4. Build the Angular app
       - name: Build Angular App
-        run: npm run build -- --base-href "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+        run: |
+          echo "Building Angular app..."
+          npx ng build --base-href "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+          echo "Listing dist folder..."
+          ls -R dist
 
-      # 5. Copy index.html to 404.html for SPA routing
-      - name: Add 404.html for GitHub Pages
-        run: cp dist/Warda-Asad-Portfolio/index.html dist/Warda-Asad-Portfolio/404.html
+      # 5. Add 404.html (for GitHub Pages SPA routing)
+      - name: Add 404.html for SPA support
+        run: cp dist/*/index.html dist/*/404.html
 
-      # 6. Deploy to gh-pages branch
+      # 6. Deploy to GitHub Pages (gh-pages branch)
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages   # Target branch
-          folder: dist/Warda-Asad-Portfolio # Build output folder
+          folder: dist/*     # Deploy whatever folder Angular generates
