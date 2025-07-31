@@ -1,9 +1,8 @@
 
 .theme-navbar {
-  background: var(--navy);
+  background: transparent;
   color: var(--dull-white);
   backdrop-filter: blur(6px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   padding: 0.5rem 0;
 }
 

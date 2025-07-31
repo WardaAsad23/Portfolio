@@ -1,4 +1,4 @@
-/* Root colors */
+
 :root {
   --navy: #0A192F;
   --charcoal: #1B1F23;
@@ -6,16 +6,16 @@
   --light-gray: #E6E8EA;
   --white: #F9FAFB;
   --dull-white: #D1D5DB;
+  --accent: #64FFDA;
 }
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.bg-header {
+body {
   background-color: var(--navy);
   background-size: cover;
   background-position: center;
