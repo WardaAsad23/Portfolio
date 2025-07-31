@@ -31,7 +31,7 @@ jobs:
 
       - name: Add 404.html for SPA support
         run: |
-          if [ -f dist/index.html ]; then
+          if [ -f dist/browser/index.html ]; then
             echo "Copying 404.html from dist root..."
             cp dist/index.html dist/404.html
           else
