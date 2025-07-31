@@ -30,18 +30,10 @@ jobs:
           ls -R dist
 
       - name: Add 404.html for SPA support
-        run: |
-          if [ -f dist/browser/index.html ]; then
-            echo "Copying 404.html from dist root..."
-            cp dist/index.html dist/404.html
-          else
-            BUILD_DIR=$(find dist -mindepth 1 -maxdepth 1 -type d | head -n 1)
-            echo "Copying 404.html from $BUILD_DIR"
-            cp "$BUILD_DIR/index.html" "$BUILD_DIR/404.html"
-          fi
+        run: cp dist/Portfolio/browser/index.html dist/Portfolio/browser/404.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist   # deploy the entire dist folder
+          folder: dist/Portfolio/browser
