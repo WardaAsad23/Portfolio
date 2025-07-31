@@ -3,29 +3,25 @@ name: Deploy Angular App to GitHub Pages
 on:
   push:
     branches:
-      - main   # Runs when pushing to main branch
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 2. Setup Node.js (use Node 20 for Angular 20+)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      # 3. Install project dependencies
       - name: Install Dependencies
         run: npm ci
 
-      # 4. Build the Angular app
       - name: Build Angular App
         run: |
           echo "Building Angular app..."
@@ -33,13 +29,15 @@ jobs:
           echo "Listing dist folder..."
           ls -R dist
 
-      # 5. Add 404.html (for GitHub Pages SPA routing)
+      # This step will find the first folder inside dist and copy 404.html correctly
       - name: Add 404.html for SPA support
-        run: cp dist/*/index.html dist/*/404.html
+        run: |
+          BUILD_DIR=$(find dist -mindepth 1 -maxdepth 1 -type d | head -n 1)
+          echo "Detected build folder: $BUILD_DIR"
+          cp "$BUILD_DIR/index.html" "$BUILD_DIR/404.html"
 
-      # 6. Deploy to GitHub Pages (gh-pages branch)
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages   # Target branch
-          folder: dist/*     # Deploy whatever folder Angular generates
+          branch: gh-pages
+          folder: dist/*    # Deploy the build folder
