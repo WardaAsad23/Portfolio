@@ -3,10 +3,11 @@
   <a class="navbar-brand logo" [routerLink]="['/home']">
     <img src="logo.png" alt="Logo" class="logo-image" />
   </a>
-  <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-bars"></i>
-  </button>
-  <div class="collapse navbar-collapse d-flex align-items-center" id="navbarResponsive">
+  <button type="button" class="navbar-toggler" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+    
+  <div [ngClass]="{'collapse': isNavbarCollapsed, 'navbar-collapse': true, 'show': !isNavbarCollapsed, 'justify-content-between': true, 'px-lg-3': true}" id="navbarCollapse">
     <div class="custom-navbar">
         <ul class="navbar-nav flex-grow-1 justify-content-center">
       <li class="nav-item mx-2">
