@@ -114,7 +114,7 @@
 
 .nav-link-custom {
   color: var(--dull-white) !important;
-  font-size: 0.6rem;
+  font-size: 0.8em;
   border-radius: 30px;
   transition: color 0.2s, box-shadow 0.2s, background 0.2s;
   position: relative;

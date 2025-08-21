@@ -1,0 +1,82 @@
+/* Container */
+.container {
+  display: flex;
+}
+
+/* Content 70% */
+.content {
+  width: 70%;
+  padding: 40px;
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fixed Navbar 30% */
+.navbar-fixed {
+  width: 30%;
+  position: fixed;
+  top: 30%;
+  right: 0;
+  padding-left: 30px; /* left-aligned inside 30% */
+}
+
+.nav-text {
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #24e9a5;
+  text-shadow: 0 0 10px #24e9a5, 0 0 20px #19d1c2;
+
+  /* Fade animation */
+  opacity: 0;                     /* start hidden */
+  transition: opacity 0.8s ease;  /* smooth fade */
+  
+  /* Keep glow animation */
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Fade in when visible */
+.nav-text.visible {
+  opacity: 1;
+}
+
+/* Glow animation */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #24e9a5, 0 0 10px #19d1c2;
+  }
+  to {
+    text-shadow: 0 0 20px #24e9a5, 0 0 40px #19d1c2;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .content, .navbar-fixed {
+    width: 100%;
+  }
+  .navbar-fixed {
+    top: 0;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+  }
+}
