@@ -1,1 +1,38 @@
-<p>about works!</p>
+<div class="about-section container">
+
+  <!-- Main about area -->
+  <div class="about-main">
+    <!-- Bio -->
+    <div class="about-bio">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate Full Stack Developer with 2+ years of experience in Angular and .NET. I love building scalable web applications with smooth UX and efficient backend logic. I focus on clean code, performance optimization, and modern design.
+      </p>
+    </div>
+
+    <!-- Galleria -->
+    <div class="about-gallery">
+      <p-galleria [value]="galleryImages" [showThumbnails]="false" [circular]="true" [autoPlay]="true" [transitionInterval]="3000" [responsiveOptions]="[{ breakpoint: '768px', numVisible: 1 }]">
+        <ng-template let-item pTemplate="item">
+          <img [src]="item.source" [alt]="item.alt" class="galleria-item"/>
+        </ng-template>
+      </p-galleria>
+    </div>
+  </div>
+
+  <div class="skills-ticker">
+  <div class="skills-track">
+    <div class="skill-item" *ngFor="let skill of skills">
+      <i [class]="skill.icon"></i>
+      <span>{{ skill.name }}</span>
+    </div>
+    
+  </div>
+</div>
+
+
+
+<app-experience></app-experience>
+<app-education></app-education>
+
+</div>

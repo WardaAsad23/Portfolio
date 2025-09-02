@@ -1,22 +1,14 @@
-import { Component, ElementRef, HostListener, QueryList, ViewChildren } from '@angular/core';
-import { TimelineModule } from 'primeng/timeline';
-import { Project } from '../Shared/project';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-projects',
-  imports: [
-    CommonModule
-  ],
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './projects.html',
   styleUrls: ['./projects.css']
 })
-
 export class Projects {
-  
   sections = [
     { id: 'section1', label: 'Al Quran Education Online', details: 'A comprehensive platform for learning Quran online with interactive features and resources.' },
     { id: 'section2', label: 'Babilfy', details: 'A platform for creating and sharing interactive stories.' },
@@ -30,18 +22,21 @@ export class Projects {
     { id: 'section10', label: 'Semester Projects and FYP', details: 'A platform for managing semester projects and final year presentations.' }
   ];
 
-  activeSectionLabel = 'Al Quran Education Online';
-  activeSectionDetails = 'A comprehensive platform for learning Quran online with interactive features and resources.';
+  activeSectionLabel = '';
+  activeSectionDetails = '';
   navVisible = false; // controls fade animation
+  showNavbar = false; // NEW: controls whether navbar renders at all
 
   ngAfterViewInit() {
     const observer = new IntersectionObserver(
       entries => {
+        let anyVisible = false;
+
         entries.forEach(entry => {
           if (entry.isIntersecting) {
+            anyVisible = true;
             const section = this.sections.find(s => s.id === entry.target.id);
             if (section) {
-              // Animate navbar text fade
               this.navVisible = false; // fade out
               setTimeout(() => {
                 this.activeSectionLabel = section.label;
@@ -52,13 +47,13 @@ export class Projects {
             entry.target.classList.add('in-view');
           }
         });
+
+        // Show/hide navbar depending on whether any section is in view
+        this.showNavbar = anyVisible;
       },
       { threshold: 0.5 }
     );
 
     document.querySelectorAll('section').forEach(sec => observer.observe(sec));
-
-    // Show initial navbar text
-    setTimeout(() => this.navVisible = true, 100);
   }
 }

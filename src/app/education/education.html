@@ -1,1 +1,18 @@
-<p>education works!</p>
+<div class="education-wrapper">
+  <p-timeline [value]="education" layout="vertical" align="alternate" class="education-timeline">
+    <ng-template pTemplate="marker" let-item>
+      <div class="education-marker">
+        <i class="pi" [ngClass]="item.icon"></i>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="content" let-item>
+      <div class="education-content">
+        <h3>{{ item.degree }}</h3>
+        <p class="school">{{ item.school }}</p>
+        <p class="duration">{{ item.duration }}</p>
+        <p class="grade" *ngIf="item.grade">Grade/GPA: {{ item.grade }}</p>
+      </div>
+    </ng-template>
+  </p-timeline>
+</div>

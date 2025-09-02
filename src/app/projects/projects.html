@@ -1,3 +1,7 @@
+<div class="module-heading text-center">
+  <h2 class="projects-heading">Things I’ve Built</h2>
+  <p class="projects-subtitle">Turning ideas into working solutions</p>
+</div>
 <div class="container">
   <!-- Content Area 70% -->
   <div class="content">
@@ -73,11 +77,15 @@
     <section id="section6" class="fade-section">Section 6 Content...</section>
   </div>
 
-  <div class="navbar-fixed">
-  <div class="dash"></div>
-  <div class="d-block">
-    <span class="nav-text" [class.visible]="navVisible">{{ activeSectionLabel }}</span>
-    <p class="flex-grow" [class.visible]="navVisible">{{ activeSectionDetails }}</p>
+   <!-- Navbar only shows when at least one section is visible -->
+  <div class="navbar-fixed" *ngIf="showNavbar">
+    <div class="nav-indicator">
+      <div class="dot"></div>
+      <div class="line"></div>
+    </div>
+    <div class="nav-content">
+      <span class="nav-label" [class.visible]="navVisible">{{ activeSectionLabel }}</span>
+      <p class="nav-details" [class.visible]="navVisible">{{ activeSectionDetails }}</p>
+    </div>
   </div>
 </div>
-

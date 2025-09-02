@@ -1,0 +1,61 @@
+.education-wrapper {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.education-timeline .p-timeline-event-opposite,
+.education-timeline .p-timeline-event-content {
+  padding: 1rem;
+}
+
+.education-marker {
+  width: 50px;
+  height: 50px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px rgba(25, 209, 194, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.education-marker:hover {
+  transform: scale(1.2);
+}
+
+.education-content {
+  background: rgba(36, 233, 165, 0.05);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.education-content h3 {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.education-content .school {
+  font-weight: 600;
+  color: #fff;
+  opacity: 0.85;
+  margin-bottom: 0.2rem;
+}
+
+.education-content .duration,
+.education-content .grade {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Center line styling */
+.education-timeline::before {
+  background-color: var(--accent) !important;
+  width: 4px !important;
+}

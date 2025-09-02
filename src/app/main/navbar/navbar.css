@@ -1,0 +1,5 @@
+.navbar-brand, .custom-navbar, .navbar-icons
+{
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
