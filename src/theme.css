@@ -17,8 +17,6 @@
   position: relative;
 }
 
-
-
 .navbar-icons {
   display: flex;
   align-items: center;
@@ -214,4 +212,8 @@
   color: #fff !important;
   font-weight: 700;
 }
+}
+
+p{
+  font-family: "NyghtSerif","NyghtSerif Fallback";
 }

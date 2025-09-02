@@ -16,14 +16,22 @@ import { CardModule } from 'primeng/card';
 })
 
 export class Projects {
+  
   sections = [
-    { id: 'section1', label: 'Section 1' },
-    { id: 'section2', label: 'Section 2' },
-    { id: 'section3', label: 'Section 3' },
-    { id: 'section4', label: 'Section 4' }
+    { id: 'section1', label: 'Al Quran Education Online', details: 'A comprehensive platform for learning Quran online with interactive features and resources.' },
+    { id: 'section2', label: 'Babilfy', details: 'A platform for creating and sharing interactive stories.' },
+    { id: 'section3', label: 'Health Management Information System', details: 'A comprehensive system for managing patient records, appointments, and billing.' },
+    { id: 'section4', label: 'Spiders', details: 'A web scraping tool for extracting data from websites.' },
+    { id: 'section5', label: 'Luxury Carts', details: 'An e-commerce platform for high-end products.' },
+    { id: 'section6', label: 'Wayz', details: 'A navigation app for finding the best routes.' },
+    { id: 'section7', label: 'Hustle', details: 'A productivity app for managing tasks and projects.' },
+    { id: 'section8', label: 'Co-space', details: 'A collaborative workspace platform for remote teams.' },
+    { id: 'section9', label: 'Homework', details: 'An app for managing and organizing homework assignments.' },
+    { id: 'section10', label: 'Semester Projects and FYP', details: 'A platform for managing semester projects and final year presentations.' }
   ];
 
-  activeSectionLabel = 'Section 1';
+  activeSectionLabel = 'Al Quran Education Online';
+  activeSectionDetails = 'A comprehensive platform for learning Quran online with interactive features and resources.';
   navVisible = false; // controls fade animation
 
   ngAfterViewInit() {
@@ -37,6 +45,7 @@ export class Projects {
               this.navVisible = false; // fade out
               setTimeout(() => {
                 this.activeSectionLabel = section.label;
+                this.activeSectionDetails = section.details;
                 this.navVisible = true; // fade in
               }, 100);
             }

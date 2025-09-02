@@ -1,14 +1,83 @@
 <div class="container">
   <!-- Content Area 70% -->
   <div class="content">
-    <section id="section1" class="fade-section">Section 1 Content...</section>
-    <section id="section2" class="fade-section">Section 2 Content...</section>
-    <section id="section3" class="fade-section">Section 3 Content...</section>
+    <section id="section1" class="fade-section projects">
+      <div class="project-card">
+        <div class="shine"></div>
+        <div class="project-bg"></div>
+        <div class="project-content">
+          <h3 class="project-title">AlQuranEdu Online</h3>
+          <p class="project-desc">
+            A modern learning platform for Quran education with online admission forms, 
+            student management, and responsive UI built with clean design principles.
+          </p>
+          <div class="tech-stack">
+            <span>Angular</span>
+            <span>.NET 8</span>
+            <span>SQL Server</span>
+            <span>Bootstrap</span>
+          </div>
+          <a href="https://alquraneduonline.com" target="_blank" class="project-link">
+            Visit Website →
+          </a>
+        </div>
+        <img src="/img/Al Quran/alquran.png" alt="AlQuranEdu Screenshot" class="project-img" />
+      </div>
+    </section>
+    <section id="section2" class="fade-section">
+      <div class="project-card">
+        <div class="shine"></div>
+        <div class="project-bg"></div>
+        <div class="project-content">
+          <h3 class="project-title">Bablify</h3>
+          <p class="project-desc">
+            A platform for creating and sharing interactive stories.
+          </p>
+          <div class="tech-stack">
+            <span>Angular</span>
+            <span>.NET 8</span>
+            <span>SQL Server</span>
+            <span>Bootstrap</span>
+          </div>
+          <a href="https://bablify.onrender.com/login" target="_blank" class="project-link">
+            Visit Website →
+          </a>
+        </div>
+        <img src="/img/Bablify/bablify.png" alt="Bablify Screenshot" class="project-img" />
+      </div>
+    </section>
+    <section id="section3" class="fade-section">
+      <div class="project-card">
+        <div class="shine"></div>
+        <div class="project-bg"></div>
+        <div class="project-content">
+          <h3 class="project-title">Health Management Information System</h3>
+          <p class="project-desc">
+            A comprehensive system for managing patient records, appointments, and billing.
+          </p>
+          <div class="tech-stack">
+            <span>Angular</span>
+            <span>.NET 8</span>
+            <span>SQL Server</span>
+            <span>Bootstrap</span>
+          </div>
+          <a href="#" target="_blank" class="project-link">
+            Visit Website →
+          </a>
+        </div>
+        <img src="/img/HMIS/hmis.png" alt="HMIS Screenshot" class="project-img" />
+      </div>
+    </section>
     <section id="section4" class="fade-section">Section 4 Content...</section>
+    <section id="section5" class="fade-section">Section 5 Content...</section>
+    <section id="section6" class="fade-section">Section 6 Content...</section>
   </div>
 
-  <!-- Fixed Navbar 30% -->
   <div class="navbar-fixed">
+  <div class="dash"></div>
+  <div class="d-block">
     <span class="nav-text" [class.visible]="navVisible">{{ activeSectionLabel }}</span>
+    <p class="flex-grow" [class.visible]="navVisible">{{ activeSectionDetails }}</p>
   </div>
 </div>
+
