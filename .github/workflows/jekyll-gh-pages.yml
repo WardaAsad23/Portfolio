@@ -30,11 +30,11 @@ jobs:
           ls -R dist
 
       - name: Add 404.html for SPA support
-        run: cp dist/Portfolio/browser/index.html dist/Portfolio/browser/404.html
+        run: cp dist/portfolio/browser/index.html dist/portfolio/browser/404.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/Portfolio/browser
+          folder: dist/portfolio/browser
           token: ${{ secrets.GH_PAT }}
