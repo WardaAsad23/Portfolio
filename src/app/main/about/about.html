@@ -1,23 +1,44 @@
 <div class="about-section container">
-
+    <div class="module-heading text-center">
+        <h2 class="heading">About Myself</h2>
+        <p class="subtitle">Driven by curiosity, shaped by experience</p>
+    </div>
   <!-- Main about area -->
-  <div class="about-main">
+   <div class="about-main">
+    
     <!-- Bio -->
     <div class="about-bio">
-      <h2>About Me</h2>
-      <p>
-        I'm a passionate Full Stack Developer with 2+ years of experience in Angular and .NET. I love building scalable web applications with smooth UX and efficient backend logic. I focus on clean code, performance optimization, and modern design.
-      </p>
+        <p class="about-text">
+        I’m <strong>Warda Asad</strong>, a <strong>Full Stack Developer</strong> with expertise in <b>.NET</b>, 
+        <b>Angular</b>, and <b>SQL databases</b>. I enjoy turning complex ideas into simple, user-friendly solutions—
+        whether it’s building health systems, ride-sharing platforms, or collaborative apps. <br><br>
+
+        I believe in <b>continuous growth</b> and stay eager to learn new technologies, approaches, and best practices.
+        For me, development is not just about writing code—it’s about solving problems thoughtfully and creating applications
+        that are reliable, efficient, and meaningful for the people who use them. <br><br>
+
+        Outside of work, I’m a <b>mom and lifelong learner</b>, balancing family and career while staying curious and motivated.
+        This balance adds empathy, patience, and creativity to the way I work and collaborate.
+        </p>
     </div>
 
     <!-- Galleria -->
     <div class="about-gallery">
-      <p-galleria [value]="galleryImages" [showThumbnails]="false" [circular]="true" [autoPlay]="true" [transitionInterval]="3000" [responsiveOptions]="[{ breakpoint: '768px', numVisible: 1 }]">
-        <ng-template let-item pTemplate="item">
-          <img [src]="item.source" [alt]="item.alt" class="galleria-item"/>
-        </ng-template>
-      </p-galleria>
+        <p-galleria [value]="galleryImages" 
+                    [showIndicators]="false" 
+                    [showItemNavigatorsOnHover]="true" 
+                    [showItemNavigators]="true" 
+                    [responsiveOptions]="responsiveOptions" 
+                    [containerStyle]="{ 'max-width': '640px' }">
+            <ng-template pTemplate="item" let-item>
+                <img [src]="item.itemImageSrc" [alt]="item.alt" class="galleria-item" />
+            </ng-template>
+            <ng-template pTemplate="thumbnail" let-item>
+                <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="display: block; border-radius: 0.5rem;" class="galleria-thumbnail"/>
+            </ng-template>
+        </p-galleria>
     </div>
+
   </div>
 
   <div class="skills-ticker">

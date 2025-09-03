@@ -8,6 +8,7 @@
 
 /* Main area: bio + gallery */
 .about-main {
+    width: 100%;
   display: flex;
   align-items: flex-start;
   gap: 3rem;
@@ -16,10 +17,11 @@
 
 /* Bio */
 .about-bio {
-  flex: 1 1 300px;
-  opacity: 0;
-  transform: translateX(50px);
-  animation: fadeInRight 1s forwards;
+    width: 60%;
+    flex: 1 1 300px;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: fadeInRight 1s forwards;
 }
 .about-bio h2 {
   font-size: 2rem;
@@ -34,19 +36,28 @@
 
 /* Gallery */
 .about-gallery {
-  flex: 1 1 400px;
-  opacity: 0;
-  transform: translateX(-50px);
-  animation: fadeInLeft 1s forwards;
+    width: 30%;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: fadeInLeft 1s forwards;
 }
 .galleria-item {
-  width: 100%;
-  height: 100%;
+  width: 25em;
+  height: 18em;
   object-fit: cover;
   border-radius: 1rem;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+.galleria-thumbnail
+{
+    padding: 0.5rem;
+    width: 5em;
+    height: 3em;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
 /* Skills Ticker */
 .skills-ticker {
   overflow: hidden;
@@ -124,4 +135,59 @@
   }
   .skill-item i { font-size: 1.3rem; }
   .skill-item span { font-size: 0.8rem; }
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f5f5f5; /* soft white */
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify;
+  position: relative;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03); /* subtle glass effect */
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Accent line on the left */
+.about-text::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 4px;
+  height: calc(100% - 40px);
+  background: linear-gradient(to bottom, #19d1c2, #24e9a5);
+  border-radius: 10px;
+}
+
+/* Emphasize keywords */
+.about-text strong,
+.about-text b {
+  color: #24e9a5;
+  font-weight: 600;
+}
+
+/* Entry animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-text {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
 }

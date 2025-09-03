@@ -9,24 +9,19 @@ import { GalleriaModule } from 'primeng/galleria';
   styleUrl: './about.css'
 })
 export class About {
-  galleryImages = [
-  { source: 'img/about1.jpg', alt: 'Project Image 1' },
-  { source: 'img/about2.jpg', alt: 'Project Image 2' },
-  { source: 'img/about3.jpg', alt: 'Project Image 3' }
-];
-
-  responsiveOptions = [
-    {
-      breakpoint: '1024px',
-      numVisible: 2
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 1
-    }
+  galleryImages: any[] = [
+    { itemImageSrc: 'img/image-1.png', thumbnailImageSrc: 'img/image-1.png', alt: 'Coding' },
+    { itemImageSrc: 'img/image-2.png', thumbnailImageSrc: 'img/image-2.png', alt: 'Cooking' },
+    { itemImageSrc: 'img/image-3.png', thumbnailImageSrc: 'img/image-3.png', alt: 'Learning' }
   ];
 
-  // projects.component.ts or about.component.ts
+  responsiveOptions: any[] = [
+    { breakpoint: '1024px', numVisible: 3 },
+    { breakpoint: '768px', numVisible: 2 },
+    { breakpoint: '560px', numVisible: 1 }
+  ];
+
+
 skills = [
   { name: 'Angular', icon: 'pi pi-angular' },
   { name: '.NET 8', icon: 'pi pi-server' },
