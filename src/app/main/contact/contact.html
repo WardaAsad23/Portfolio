@@ -1,1 +1,33 @@
-<p>contact works!</p>
+<p-toast position="top-right" key="t"></p-toast>
+
+<div class="module-heading text-center">
+  <h2 class="heading">Let’s Connect</h2>
+  <p class="subtitle">I’d love to hear from you — whether it’s about a project, an opportunity, or just a friendly hello.</p>
+</div>
+<div class="page-contact">
+    <div class="container">
+        <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="contact-form">
+            <div class="row">
+            <div class="col-md-6 mb-3">
+                <input formControlName="name" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <input formControlName="email" type="email" placeholder="Your Email" required>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-12 mb-3">
+                <textarea formControlName="message" placeholder="Your Message" required></textarea>
+            </div>
+            </div>
+            <button type="submit"><i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin-pulse"></i> Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <p class="contact-text">
+                Send a message or reach me directly at  
+                <a href="mailto:wardaasad23@gmail.com">{{"wardaasad23@gmail.com"}}</a>
+            </p>
+        </div>
+    </div>
+</div>
