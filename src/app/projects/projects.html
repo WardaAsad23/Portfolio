@@ -87,8 +87,8 @@
       <div class="line"></div>
     </div>
     <div class="nav-content">
-      <span class="nav-label" [class.visible]="navVisible">{{ sections[0].label }}</span>
-      <p class="nav-details" [class.visible]="navVisible">{{ sections[activeSectionId].details }}</p>
+      <span class="nav-label" [class.visible]="navVisible">{{ sections[activeSectionId]?.label }}</span>
+      <p class="nav-details" [class.visible]="navVisible">{{ sections[activeSectionId]?.details }}</p>
     </div>
   </div>
 </div>
