@@ -10,17 +10,73 @@ import { CommonModule } from '@angular/common';
 })
 export class Projects {
   sections = [
-    { id: "0", label: 'Al Quran Education Online', details: 'A comprehensive platform for learning Quran online with interactive features and resources.' },
-    { id: "1", label: 'Babilfy', details: 'A platform for creating and sharing interactive stories.' },
-    { id: "2", label: 'Health Management Information System', details: 'A comprehensive system for managing patient records, appointments, and billing.' },
-    { id: "3", label: 'Spiders', details: 'A web scraping tool for extracting data from websites.' },
-    { id: "4", label: 'Luxury Carts', details: 'An e-commerce platform for high-end products.' },
-    { id: "5", label: 'Wayz', details: 'A navigation app for finding the best routes.' },
-    { id: "6", label: 'Hustle', details: 'A productivity app for managing tasks and projects.' },
-    { id: "7", label: 'Co-space', details: 'A collaborative workspace platform for remote teams.' },
-    { id: "8", label: 'Homework', details: 'An app for managing and organizing homework assignments.' },
-    { id: "9", label: 'Semester Projects and FYP', details: 'A platform for managing semester projects and final year presentations.' }
-  ];
+  {
+    id: "0",
+    title: 'Al Quran Education Online',
+    content: 'A modern frontend platform for learning the Quran online. It provides responsive UI, interactive lessons, and easy navigation for students. This project focuses on creating a clean and engaging learning interface.',
+    contentPoints: [
+      'Responsive UI built with Angular and Bootstrap.',
+      'Interactive lessons for students.',
+      'Clean design for easy navigation.',
+      'Frontend-only application without backend tracking.'
+    ]
+  },
+  {
+    id: "1",
+    title: 'Babilfy',
+    content: 'Babilfy is a simple real-time chat application. Users can send and receive messages instantly using a smooth and responsive interface. The app focuses on providing fast communication without extra features.',
+    contentPoints: [
+      'Real-time messaging using Angular and SignalR.',
+      'Responsive and clean interface.',
+      'Lightweight and simple chat application.'
+    ]
+  },
+  {
+    id: "2",
+    title: 'Health Management Information System',
+    content: 'A comprehensive system to manage patient registration, appointments, and visits. It streamlines hospital operations and provides easy access for staff. Built with modern technologies for responsive performance.',
+    contentPoints: [
+      'Manages patient registration, appointments, and visits.',
+      'Streamlines hospital operations and billing.',
+      'Responsive UI across devices.',
+      'Built with Angular, .NET, SQL Server, and Bootstrap.'
+    ]
+  },
+  {
+    id: "3",
+    title: 'Spiders',
+    content: 'Spiders is a web scraping tool for ride-hailing services. It extracts operational data to optimize vehicle allocation and pricing. The tool supports data-driven decisions to improve efficiency.',
+    contentPoints: [
+      'Web scraping for ride-hailing service data.',
+      'Optimizes vehicle allocation and pricing.',
+      'Supports operational efficiency and analytics.'
+    ]
+  },
+  {
+    id: "4",
+    title: 'Human Resource Management System',
+    content: 'A system to manage employee records, attendance, and leaves. It simplifies HR workflows and approvals. Built to improve transparency and streamline HR processes.',
+    contentPoints: [
+      'Manages employee records, attendance, and leave requests.',
+      'Supports hierarchical approvals.',
+      'Streamlines HR workflows and improves transparency.',
+      'Built with Angular, .NET, SQL Server, and Bootstrap.'
+    ]
+  },
+  {
+    id: "5",
+    title: 'Co-space',
+    content: 'Co-space is a collaborative workspace platform for startups and freelancers. It allows easy booking of office spaces and meeting rooms. The platform helps manage workspace resources efficiently.',
+    contentPoints: [
+      'Book office spaces and meeting rooms.',
+      'Efficient workspace resource management.',
+      'Facilitates collaboration for small businesses and teams.'
+    ]
+  }
+];
+
+//{ id: "6", label: 'Semester Projects and FYP', details: 'A platform for managing semester projects and final year presentations.' }
+
   activeSectionId = null;
   navVisible = false; // controls fade animation
   showNavbar = false; // NEW: controls whether navbar renders at all

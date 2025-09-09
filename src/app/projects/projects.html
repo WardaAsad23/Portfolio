@@ -18,9 +18,9 @@
             student management, and responsive UI built with clean design principles.
           </p>
           <div class="tech-stack">
-            <span>Angular</span>
-            <span>.NET 8</span>
-            <span>SQL Server</span>
+            <span>Angular 20</span>
+            <span>Javascript</span>
+            <span>PrimeNG</span>
             <span>Bootstrap</span>
           </div>
           <a href="https://alquraneduonline.com" target="_blank" class="project-link">
@@ -44,8 +44,11 @@
           <div class="tech-stack">
             <span>Angular</span>
             <span>.NET 8</span>
-            <span>SQL Server</span>
+            <span>SignalR</span>
+            <span>Firebase</span>
+            <span>Oracle</span>
             <span>Bootstrap</span>
+            <span>PrimeNG</span>
           </div>
           <a href="https://bablify.onrender.com/login" target="_blank" class="project-link">
             Visit Website →
@@ -65,10 +68,89 @@
           <p class="project-desc">
             A comprehensive system for managing patient records, appointments, and billing.
           </p>
+          <div class="company-badge">Indus Hospital & Health Network</div>
+          <div class="tech-stack">
+            <span>Angular</span>
+            <span>.NET 6</span>
+            <span>Oracle</span>
+            <span>Material</span>
+            <span>Bootstrap</span>
+          </div>
+          <a href="https://hmis-uat.tih.org.pk/authentication/signin" target="_blank" class="project-link">
+            Visit Website →
+          </a>
+        </div>
+        <img src="img/HMIS/hmis.png" alt="HMIS Screenshot" class="project-img" />
+      </div>
+    </section>
+
+    <!-- Project 4 -->
+    <section id="3" class="fade-section projects">
+      <div class="project-card">
+        <div class="shine"></div>
+        <div class="project-bg"></div>
+        <div class="project-content">
+          <h3 class="project-title">Spiders</h3>
+          <p class="project-desc">
+            A web scraping tool for extracting data from websites.
+          </p>
+          <div class="company-badge">Meezotech</div>
           <div class="tech-stack">
             <span>Angular</span>
             <span>.NET 8</span>
+            <span>MySQL</span>
+            <span>Bootstrap</span>
+          </div>
+          <a href="https://admin.v2.spidersdev.link/" target="_blank" class="project-link">
+            Visit Website →
+          </a>
+        </div>
+        <img src="img/Spiders/Spiders.png" alt="HMIS Screenshot" class="project-img" />
+      </div>
+    </section>
+
+    <!-- Project 5 -->
+    <section id="4" class="fade-section projects">
+      <div class="project-card">
+        <div class="shine"></div>
+        <div class="project-bg"></div>
+        <div class="project-content">
+          <h3 class="project-title">Human Resource Management System</h3>
+          <p class="project-desc">
+            A comprehensive system for managing employee records, attendance, and leaves.
+          </p>
+          <div class="company-badge">Meezotech</div>
+          <div class="tech-stack">
+            <span>Angular 16</span>
+            <span>.NET 6</span>
             <span>SQL Server</span>
+            <span>Stored Procedures</span>
+            <span>PrimeNG</span>
+            <span>Bootstrap</span>
+          </div>
+          <a href="#" target="_blank" class="project-link">
+            Visit Website →
+          </a>
+        </div>
+        <img src="img/HMIS/hmis.png" alt="HMIS Screenshot" class="project-img" />
+      </div>
+    </section>
+
+    <!-- Project 6 -->
+    <section id="5" class="fade-section projects">
+      <div class="project-card">
+        <div class="shine"></div>
+        <div class="project-bg"></div>
+        <div class="project-content">
+          <h3 class="project-title">Co-Space</h3>
+          <p class="project-desc">
+            A platform for managing co-working spaces, bookings, and payments.
+          </p>
+          <div class="company-badge">The Code IT Company</div>
+          <div class="tech-stack">
+            <span>ASP.NET MVC</span>
+            <span>SQL Server</span>
+            <span>Stored Procedures</span>
             <span>Bootstrap</span>
           </div>
           <a href="#" target="_blank" class="project-link">
@@ -87,8 +169,20 @@
       <div class="line"></div>
     </div>
     <div class="nav-content">
-      <span class="nav-label" [class.visible]="navVisible">{{ sections[activeSectionId]?.label }}</span>
-      <p class="nav-details" [class.visible]="navVisible">{{ sections[activeSectionId]?.details }}</p>
+      <span class="nav-label" [class.visible]="navVisible">
+        {{ sections[activeSectionId]?.title }}
+      </span>
+
+      <p class="nav-details" [class.visible]="navVisible">
+        {{ sections[activeSectionId]?.content }}
+      </p>
+
+      <div class="nav-points" [class.visible]="navVisible">
+        <div *ngFor="let point of sections[activeSectionId]?.contentPoints" class="nav-point">
+          <div class="nav-dot"></div>
+          <span>{{ point }}</span>
+        </div>
+      </div>
     </div>
-  </div>
+
 </div>
