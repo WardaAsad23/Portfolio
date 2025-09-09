@@ -29,7 +29,6 @@ jobs:
           echo "Listing dist folder..."
           ls -R dist
 
-
       - name: Add 404.html for SPA support
         run: cp dist/portfolio/browser/index.html dist/portfolio/browser/404.html
 
