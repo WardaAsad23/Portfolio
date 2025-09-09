@@ -2,10 +2,12 @@
   <h2 class="heading">Things I’ve Built</h2>
   <p class="subtitle">Turning ideas into working solutions</p>
 </div>
+
 <div class="container">
-  <!-- Content Area 70% -->
+  <!-- Content -->
   <div class="content">
-    <section id="section1" class="fade-section projects">
+    <!-- Project 1 -->
+    <section id="0" class="fade-section projects">
       <div class="project-card">
         <div class="shine"></div>
         <div class="project-bg"></div>
@@ -28,7 +30,9 @@
         <img src="img/Al Quran/alquran.png" alt="AlQuranEdu Screenshot" class="project-img" />
       </div>
     </section>
-    <section id="section2" class="fade-section">
+
+    <!-- Project 2 -->
+    <section id="1" class="fade-section projects">
       <div class="project-card">
         <div class="shine"></div>
         <div class="project-bg"></div>
@@ -50,7 +54,9 @@
         <img src="img/Bablify/bablify.png" alt="Bablify Screenshot" class="project-img" />
       </div>
     </section>
-    <section id="section3" class="fade-section">
+
+    <!-- Project 3 -->
+    <section id="2" class="fade-section projects">
       <div class="project-card">
         <div class="shine"></div>
         <div class="project-bg"></div>
@@ -72,20 +78,17 @@
         <img src="img/HMIS/hmis.png" alt="HMIS Screenshot" class="project-img" />
       </div>
     </section>
-    <section id="section4" class="fade-section">Section 4 Content...</section>
-    <section id="section5" class="fade-section">Section 5 Content...</section>
-    <section id="section6" class="fade-section">Section 6 Content...</section>
   </div>
 
-   <!-- Navbar only shows when at least one section is visible -->
+  <!-- Navbar -->
   <div class="navbar-fixed" *ngIf="showNavbar">
-    <div class="nav-indicator">
+    <div class="nav-indicator" [class.active]="navVisible">
       <div class="dot"></div>
       <div class="line"></div>
     </div>
     <div class="nav-content">
-      <span class="nav-label" [class.visible]="navVisible">{{ activeSectionLabel }}</span>
-      <p class="nav-details" [class.visible]="navVisible">{{ activeSectionDetails }}</p>
+      <span class="nav-label" [class.visible]="navVisible">{{ sections[0].label }}</span>
+      <p class="nav-details" [class.visible]="navVisible">{{ sections[activeSectionId].details }}</p>
     </div>
   </div>
 </div>

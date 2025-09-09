@@ -3,32 +3,34 @@
   display: flex;
 }
 
-/* Content 70% */
 .content {
-  width: 70%;
-  padding: 40px;
+  width: 70%; /* leave space for navbar */
+  padding: 20px;
+  margin-right: 30%; /* pushes content away from navbar */
+  box-sizing: border-box;
 }
 
-/* Sections */
 section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  opacity: 0;
-  transform: translateY(30px);
+  padding: 60px 40px;
+  margin-bottom: 4rem;
+  min-height: auto; /* no forced 100vh */
+  opacity: 1;
+  transform: translateY(50px);
   transition: opacity 1s ease, transform 1s ease;
+  box-sizing: border-box;
 }
+
 
 section.in-view {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Navbar */
 .navbar-fixed {
   width: 30%;
   position: fixed;
-  top: 35%;
+  top: 45%;
   right: 5%;
   display: flex;
   align-items: flex-start;
@@ -59,6 +61,15 @@ section.in-view {
   transition: all 0.3s ease;
 }
 
+.nav-indicator.active .dot {
+  transform: scale(1.3);
+  background: #19d1c2;
+}
+
+.nav-indicator.active .line {
+  background: #19d1c2;
+}
+
 /* Nav text */
 .nav-content {
   display: flex;
@@ -84,24 +95,13 @@ section.in-view {
   transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
 }
 
-/* Fade in when visible */
 .nav-label.visible,
 .nav-details.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Active dot animation */
-.nav-label.visible ~ .nav-indicator .dot {
-  transform: scale(1.3);
-  background: #19d1c2;
-}
-
-.nav-label.visible ~ .nav-indicator .line {
-  background: #19d1c2;
-}
-
-/* Responsive */
+/* Responsive Navbar for Mobile */
 @media (max-width: 768px) {
   .navbar-fixed {
     bottom: 0;
@@ -109,8 +109,7 @@ section.in-view {
     right: 0;
     width: 100%;
     justify-content: center;
-    padding: 10px 0;
-    gap: 8px;
+    padding: 8px 0;
     background: rgba(0,0,0,0.6);
     backdrop-filter: blur(6px);
   }
@@ -125,24 +124,33 @@ section.in-view {
     width: 8px;
     height: 8px;
   }
+  .content {
+    width: 100%;
+    margin-right: 0;
+    padding: 20px;
+  }
+  section {
+    width: 100%;
+    padding: 40px 20px;
+  }
 }
 
+/* Projects Section */
 .projects {
   display: flex;
   justify-content: center;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
 }
 
 /* Project Card */
 .project-card {
   position: relative;
   background: var(--charcoal);
-  
   border: 1px solid rgba(255, 254, 254,0.5);
   border-radius: 1.5rem;
   overflow: hidden;
   width: 100%;
-  max-width: 700px;   /* double-width on desktop */
+  max-width: 700px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
@@ -153,7 +161,7 @@ section.in-view {
   box-shadow: 0 20px 50px rgba(0,0,0,0.7);
 }
 
-/* Metallic Shine */
+/* Shine effect */
 .shine {
   position: absolute;
   top: 0;
@@ -172,7 +180,7 @@ section.in-view {
   100% { left: 100%; }
 }
 
-/* Gradient BG Overlay */
+/* Gradient background */
 .project-bg {
   position: absolute;
   inset: 0;
@@ -185,7 +193,7 @@ section.in-view {
   opacity: 0.25;
 }
 
-/* Content */
+/* Card content */
 .project-content {
   position: relative;
   padding: 2rem;
@@ -216,7 +224,7 @@ section.in-view {
   color: var(--white);
 }
 
-/* Screenshot Image */
+/* Project image */
 .project-img {
   width: 90%;
   margin: 1rem auto 2rem auto;
@@ -227,10 +235,10 @@ section.in-view {
 
 .project-card:hover .project-img {
   transform: scale(1.08) rotate(-3deg);
-  box-shadow: 0 0 40px rgba(100, 255, 218, 0.4); /* glowing effect */
+  box-shadow: 0 0 40px rgba(100, 255, 218, 0.4);
 }
 
-/* Responsive */
+/* Responsive cards */
 @media (max-width: 1024px) {
   .project-card {
     max-width: 90%;
@@ -255,6 +263,7 @@ section.in-view {
   }
 }
 
+/* Tech stack */
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
@@ -276,15 +285,4 @@ section.in-view {
 .tech-stack span:hover {
   background: var(--accent);
   color: var(--charcoal);
-}
-
-/* styles.css or component.scss */
-.dash {
-  display: inline-block;
-  width: 20px;  
-  height: 3px;
-  background-color: var(--light-charcoal);
-  border-radius: 4px;
-  margin: 1rem 1rem 1rem 0;
-  text-shadow: 0 0 10px #999c9b, 0 0 20px #19d1c2;
 }
