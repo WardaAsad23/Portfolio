@@ -21,7 +21,7 @@ export class Projects {
     { id: 8, label: 'Homework', details: 'An app for managing and organizing homework assignments.' },
     { id: 9, label: 'Semester Projects and FYP', details: 'A platform for managing semester projects and final year presentations.' }
   ];
-  activeSectionId = 0;
+  activeSectionId = null;
   navVisible = false; // controls fade animation
   showNavbar = false; // NEW: controls whether navbar renders at all
 
