@@ -14,7 +14,7 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": "dist/portfolio",
-            "baseHref": "/Warda-Asad-Portfolio/",
+            "baseHref": "/Portfolio/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
