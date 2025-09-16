@@ -1,13 +1,29 @@
 /* Container */
 .container {
-  display: flex;
+  display: block; /* remove flex */
+  position: relative;
 }
 
+/* Content takes full width */
 .content {
-  width: 70%; /* leave space for navbar */
+  width: 70%;
   padding: 20px;
-  margin-right: 30%; /* pushes content away from navbar */
+  margin-right: 0;
   box-sizing: border-box;
+}
+
+/* Navbar as overlay sidebar */
+.navbar-fixed {
+  width: 30%;          /* fixed width instead of % */
+  position: fixed;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'Helvetica Neue', sans-serif;
+  z-index: 999;          /* keep above */
 }
 
 section {
@@ -24,18 +40,6 @@ section {
 section.in-view {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Navbar */
-.navbar-fixed {
-  width: 30%;
-  position: fixed;
-  top: 45%;
-  right: 5%;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-family: 'Helvetica Neue', sans-serif;
 }
 
 .nav-indicator {

@@ -13,6 +13,6 @@
   </div>
 </div>
 
-<div id="projects">
-  <app-projects></app-projects>
+<div id="projects" #projectsContainer>
+  <app-projects [isVisible]="projectsVisible"></app-projects>
 </div>

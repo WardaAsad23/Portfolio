@@ -27,7 +27,27 @@
             Visit Website →
           </a>
         </div>
-        <img src="img/Al Quran/alquran.png" alt="AlQuranEdu Screenshot" class="project-img" />
+        <p-galleria 
+          [value]="images[0]" 
+          [showItemNavigators]="true" 
+          [autoPlay]="true"
+          [showThumbnails]="false" 
+          [showIndicators]="true" 
+          [showItemNavigatorsOnHover]="true" 
+          [circular]="true"
+          [responsiveOptions]="responsiveOptions"
+          class="project-img">
+
+          <ng-template let-item pTemplate="item">
+              <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+          </ng-template>
+
+          <ng-template let-item pTemplate="thumbnail">
+              <img [src]="item.thumbnailImageSrc" style="display: block;" />
+          </ng-template>
+
+        </p-galleria>
+
       </div>
     </section>
 
@@ -54,7 +74,14 @@
             Visit Website →
           </a>
         </div>
-        <img src="img/Bablify/bablify.png" alt="Bablify Screenshot" class="project-img" />
+        <p-galleria [value]="images[1]" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true" [circular]="true"[responsiveOptions]="responsiveOptions" class="project-img">
+          <ng-template #item let-item>
+              <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+          </ng-template>
+          <ng-template #thumbnail let-item>
+              <img [src]="item.thumbnailImageSrc" style="display: block;" />
+          </ng-template>
+        </p-galleria>
       </div>
     </section>
 
@@ -80,7 +107,14 @@
             Visit Website →
           </a>
         </div>
-        <img src="img/HMIS/hmis.png" alt="HMIS Screenshot" class="project-img" />
+        <p-galleria [value]="images[2]" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true" [circular]="true"[responsiveOptions]="responsiveOptions" class="project-img">
+          <ng-template #item let-item>
+              <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+          </ng-template>
+          <ng-template #thumbnail let-item>
+              <img [src]="item.thumbnailImageSrc" style="display: block;" />
+          </ng-template>
+      </p-galleria>
       </div>
     </section>
 
@@ -105,7 +139,14 @@
             Visit Website →
           </a>
         </div>
-        <img src="img/Spiders/Spiders.png" alt="HMIS Screenshot" class="project-img" />
+        <p-galleria [value]="images[3]" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true" [circular]="true"[responsiveOptions]="responsiveOptions" class="project-img">
+            <ng-template #item let-item>
+                <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+            </ng-template>
+            <ng-template #thumbnail let-item>
+                <img [src]="item.thumbnailImageSrc" style="display: block;" />
+            </ng-template>
+        </p-galleria>
       </div>
     </section>
 
@@ -132,7 +173,14 @@
             Visit Website →
           </a>
         </div>
-        <img src="img/HMIS/hmis.png" alt="HMIS Screenshot" class="project-img" />
+        <p-galleria [value]="images[4]" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true" [circular]="true"[responsiveOptions]="responsiveOptions" class="project-img">
+          <ng-template #item let-item>
+              <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+          </ng-template>
+          <ng-template #thumbnail let-item>
+              <img [src]="item.thumbnailImageSrc" style="display: block;" />
+          </ng-template>
+      </p-galleria>
       </div>
     </section>
 
@@ -157,13 +205,20 @@
             Visit Website →
           </a>
         </div>
-        <img src="img/HMIS/hmis.png" alt="HMIS Screenshot" class="project-img" />
+        <p-galleria [value]="images[5]" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true" [circular]="true"[responsiveOptions]="responsiveOptions" class="project-img">
+          <ng-template #item let-item>
+              <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+          </ng-template>
+          <ng-template #thumbnail let-item>
+              <img [src]="item.thumbnailImageSrc" style="display: block;" />
+          </ng-template>
+        </p-galleria>
       </div>
     </section>
   </div>
 
   <!-- Navbar -->
-  <div class="navbar-fixed" *ngIf="showNavbar">
+  <div class="navbar-fixed" *ngIf="showNavbar && showNavbarHome">
     <div class="nav-indicator" [class.active]="navVisible">
       <div class="dot"></div>
       <div class="line"></div>
