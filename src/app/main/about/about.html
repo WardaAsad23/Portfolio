@@ -1,14 +1,13 @@
 <div class="about-section container">
-    <div class="module-heading text-center">
-        <h2 class="heading">About Myself</h2>
-        <p class="subtitle">Driven by curiosity, shaped by experience</p>
-    </div>
-  <!-- Main about area -->
-   <div class="about-main">
-    
+  <div class="module-heading text-center">
+    <h2 class="heading">About Myself</h2>
+    <p class="subtitle">Driven by curiosity, shaped by experience</p>
+  </div>
+
+  <div class="about-main">
     <!-- Bio -->
     <div class="about-bio">
-        <p class="about-text">
+      <p class="about-text">
         I’m <strong>Warda Asad</strong>, a <strong>Full Stack Developer</strong> with expertise in <b>.NET</b>, 
         <b>Angular</b>, and <b>SQL databases</b>. I enjoy turning complex ideas into simple, user-friendly solutions—
         whether it’s building health systems, ride-sharing platforms, or collaborative apps. <br><br>
@@ -22,37 +21,49 @@
         </p>
     </div>
 
-    <!-- Galleria -->
+    <!-- Gallery -->
     <div class="about-gallery">
-        <p-galleria [value]="galleryImages" 
-                    [showIndicators]="false" 
-                    [showItemNavigatorsOnHover]="true" 
-                    [showItemNavigators]="true" 
-                    [responsiveOptions]="responsiveOptions" 
-                    [containerStyle]="{ 'max-width': '640px' }">
-            <ng-template pTemplate="item" let-item>
-                <img [src]="item.itemImageSrc" [alt]="item.alt" class="galleria-item" />
-            </ng-template>
-            <ng-template pTemplate="thumbnail" let-item>
-                <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="display: block; border-radius: 0.5rem;" class="galleria-thumbnail"/>
-            </ng-template>
-        </p-galleria>
+  <div class="slider-container">
+    <!-- Main Image -->
+    <div class="slider-main">
+      <img [src]="galleryImages[currentIndex].itemImageSrc" 
+           [alt]="galleryImages[currentIndex].alt" 
+           class="slider-img" />
+
+      <!-- Description overlay -->
+      <div class="slider-description">
+        {{ galleryImages[currentIndex].description }}
+      </div>
+
+      <!-- Arrows -->
+      <button class="arrow left" (click)="prevImage()">&#10094;</button>
+      <button class="arrow right" (click)="nextImage()">&#10095;</button>
     </div>
 
-  </div>
-
-  <div class="skills-ticker">
-  <div class="skills-track">
-    <div class="skill-item" *ngFor="let skill of skills">
-      <i [class]="skill.icon"></i>
-      <span>{{ skill.name }}</span>
+    <!-- Thumbnails -->
+    <div class="slider-thumbnails">
+      <div *ngFor="let img of galleryImages; let i = index" 
+           class="thumbnail-wrapper"
+           [class.active]="i === currentIndex"
+           (click)="goToImage(i)">
+        <img [src]="img.thumbnailImageSrc" [alt]="img.alt" class="thumbnail-img"/>
+      </div>
     </div>
-    
   </div>
 </div>
 
 
+  </div>
 
+  <!-- Skills Ticker -->
+  <div class="skills-ticker">
+    <div class="skills-track">
+      <div class="skill-item" *ngFor="let skill of skills">
+        <i [class]="skill.icon"></i>
+        <span>{{ skill.name }}</span>
+      </div>
+    </div>
+  </div>
 <app-experience></app-experience>
 <app-education></app-education>
 

@@ -27,27 +27,29 @@
             Visit Website →
           </a>
         </div>
-        <p-galleria 
-          [value]="images[0]" 
-          [showItemNavigators]="true" 
-          [autoPlay]="true"
-          [showThumbnails]="false" 
-          [showIndicators]="true" 
-          [showItemNavigatorsOnHover]="true" 
-          [circular]="true"
-          [responsiveOptions]="responsiveOptions"
-          class="project-img">
+        <div class="slider">
+          <!-- Slide wrapper -->
+          <div class="slides-wrapper">
+            <div class="slides" [style.transform]="getTransform()">
+              <img *ngFor="let img of images[0]" [src]="img" class="slide-img" />
+            </div>
+          </div>
 
-          <ng-template let-item pTemplate="item">
-              <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
-          </ng-template>
+          <!-- Arrows -->
+          <button class="arrow left" (click)="prevSlide(0)">&#10094;</button>
+          <button class="arrow right" (click)="nextSlide(0)">&#10095;</button>
 
-          <ng-template let-item pTemplate="thumbnail">
-              <img [src]="item.thumbnailImageSrc" style="display: block;" />
-          </ng-template>
+          <!-- Thumbnails -->
+          <div class="thumbnails">
+            <img *ngFor="let img of images[0]; let idx = index"
+                [src]="img"
+                [class.active]="idx === currentIndex"
+                (click)="goToSlide(idx)"
+                class="thumb-img" />
+          </div>
+        </div>
 
-        </p-galleria>
-
+  
       </div>
     </section>
 
@@ -74,14 +76,27 @@
             Visit Website →
           </a>
         </div>
-        <p-galleria [value]="images[1]" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true" [circular]="true"[responsiveOptions]="responsiveOptions" class="project-img">
-          <ng-template #item let-item>
-              <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
-          </ng-template>
-          <ng-template #thumbnail let-item>
-              <img [src]="item.thumbnailImageSrc" style="display: block;" />
-          </ng-template>
-        </p-galleria>
+        <div class="slider">
+          <!-- Slide wrapper -->
+          <div class="slides-wrapper">
+            <div class="slides" [style.transform]="getTransform()">
+              <img *ngFor="let img of images[1]" [src]="img" class="slide-img project-img" />
+            </div>
+          </div>
+
+          <!-- Arrows -->
+          <button class="arrow left" (click)="prevSlide(1)">&#10094;</button>
+          <button class="arrow right" (click)="nextSlide(1)">&#10095;</button>
+
+          <!-- Thumbnails -->
+          <div class="thumbnails">
+            <img *ngFor="let img of images[1]; let idx = index"
+                [src]="img"
+                [class.active]="idx === currentIndex"
+                (click)="goToSlide(idx)"
+                class="thumb-img" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -107,14 +122,27 @@
             Visit Website →
           </a>
         </div>
-        <p-galleria [value]="images[2]" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true" [circular]="true"[responsiveOptions]="responsiveOptions" class="project-img">
-          <ng-template #item let-item>
-              <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
-          </ng-template>
-          <ng-template #thumbnail let-item>
-              <img [src]="item.thumbnailImageSrc" style="display: block;" />
-          </ng-template>
-      </p-galleria>
+        <div class="slider">
+          <!-- Slide wrapper -->
+          <div class="slides-wrapper">
+            <div class="slides" [style.transform]="getTransform()">
+              <img *ngFor="let img of images[2]" [src]="img" class="slide-img project-img" />
+            </div>
+          </div>
+
+          <!-- Arrows -->
+          <button class="arrow left" (click)="prevSlide(2)">&#10094;</button>
+          <button class="arrow right" (click)="nextSlide(2)">&#10095;</button>
+
+          <!-- Thumbnails -->
+          <div class="thumbnails">
+            <img *ngFor="let img of images[2]; let idx = index"
+                [src]="img"
+                [class.active]="idx === currentIndex"
+                (click)="goToSlide(idx)"
+                class="thumb-img" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -139,14 +167,27 @@
             Visit Website →
           </a>
         </div>
-        <p-galleria [value]="images[3]" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true" [circular]="true"[responsiveOptions]="responsiveOptions" class="project-img">
-            <ng-template #item let-item>
-                <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
-            </ng-template>
-            <ng-template #thumbnail let-item>
-                <img [src]="item.thumbnailImageSrc" style="display: block;" />
-            </ng-template>
-        </p-galleria>
+        <div class="slider">
+          <!-- Slide wrapper -->
+          <div class="slides-wrapper">
+            <div class="slides" [style.transform]="getTransform()">
+              <img *ngFor="let img of images[3]" [src]="img" class="slide-img project-img" />
+            </div>
+          </div>
+
+          <!-- Arrows -->
+          <button class="arrow left" (click)="prevSlide(3)">&#10094;</button>
+          <button class="arrow right" (click)="nextSlide(3)">&#10095;</button>
+
+          <!-- Thumbnails -->
+          <div class="thumbnails">
+            <img *ngFor="let img of images[3]; let idx = index"
+                [src]="img"
+                [class.active]="idx === currentIndex"
+                (click)="goToSlide(idx)"
+                class="thumb-img" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -173,14 +214,27 @@
             Visit Website →
           </a>
         </div>
-        <p-galleria [value]="images[4]" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true" [circular]="true"[responsiveOptions]="responsiveOptions" class="project-img">
-          <ng-template #item let-item>
-              <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
-          </ng-template>
-          <ng-template #thumbnail let-item>
-              <img [src]="item.thumbnailImageSrc" style="display: block;" />
-          </ng-template>
-      </p-galleria>
+        <div class="slider">
+          <!-- Slide wrapper -->
+          <div class="slides-wrapper">
+            <div class="slides" [style.transform]="getTransform()">
+              <img *ngFor="let img of images[4]" [src]="img" class="slide-img project-img" />
+            </div>
+          </div>
+
+          <!-- Arrows -->
+          <button class="arrow left" (click)="prevSlide(4)">&#10094;</button>
+          <button class="arrow right" (click)="nextSlide(4)">&#10095;</button>
+
+          <!-- Thumbnails -->
+          <div class="thumbnails">
+            <img *ngFor="let img of images[4]; let idx = index"
+                [src]="img"
+                [class.active]="idx === currentIndex"
+                (click)="goToSlide(idx)"
+                class="thumb-img" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -205,14 +259,27 @@
             Visit Website →
           </a>
         </div>
-        <p-galleria [value]="images[5]" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true" [circular]="true"[responsiveOptions]="responsiveOptions" class="project-img">
-          <ng-template #item let-item>
-              <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
-          </ng-template>
-          <ng-template #thumbnail let-item>
-              <img [src]="item.thumbnailImageSrc" style="display: block;" />
-          </ng-template>
-        </p-galleria>
+        <div class="slider">
+          <!-- Slide wrapper -->
+          <div class="slides-wrapper">
+            <div class="slides" [style.transform]="getTransform()">
+              <img *ngFor="let img of images[5]" [src]="img" class="slide-img project-img" />
+            </div>
+          </div>
+
+          <!-- Arrows -->
+          <button class="arrow left" (click)="prevSlide(5)">&#10094;</button>
+          <button class="arrow right" (click)="nextSlide(5)">&#10095;</button>
+
+          <!-- Thumbnails -->
+          <div class="thumbnails">
+            <img *ngFor="let img of images[5]; let idx = index"
+                [src]="img"
+                [class.active]="idx === currentIndex"
+                (click)="goToSlide(idx)"
+                class="thumb-img" />
+          </div>
+        </div>
       </div>
     </section>
   </div>

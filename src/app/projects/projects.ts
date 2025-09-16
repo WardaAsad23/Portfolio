@@ -12,68 +12,56 @@ import { GalleriaModule } from 'primeng/galleria';
 export class Projects {
   @Input() isVisible: boolean;
   images = [
-  // Project 0: AlQuranEdu
-  [
-    { itemImageSrc: 'img/AlQuran/alquran.png', thumbnailImageSrc: 'img/AlQuran/alquran.png' },
-    { itemImageSrc: 'img/AlQuran/alquran.png', thumbnailImageSrc: 'img/AlQuran/alquran.png' },
-    { itemImageSrc: 'img/AlQuran/alquran.png', thumbnailImageSrc: 'img/AlQuran/alquran.png' }
-  ],
+    ['img/AlQuran/alquran.png', 'img/AlQuran/alquran1.png', 'img/AlQuran/alquran2.png'],
+    ['img/Bablify/bablify.png', 'img/Bablify/bablify1.png', 'img/Bablify/bablify2.png'],
+    ['img/HMIS/hmis.png', 'img/HMIS/hmis1.jpg', 'img/HMIS/hmis2.jpg', 'img/HMIS/hmis3.jpg'],
+    ['img/Spiders/spiders.png', 'img/Spiders/spiders1.png', 'img/Spiders/spiders2.png'],
+    ['img/Hrm/hrm.png','img/Hrm/hrm1.png','img/Hrm/hrm2.png','img/Hrm/hrm3.png','img/Hrm/hrm4.png','img/Hrm/hrm5.png'],
+    ['img/Cospace/cospace.png','img/Cospace/cospace1.png','img/Cospace/cospace2.png', 'img/Cospace/cospace3.png']
+  ];
 
-  // Project 1: Bablify
-  [
-    { itemImageSrc: 'img/Bablify/bablify.png', thumbnailImageSrc: 'img/Bablify/bablify.png' },
-    { itemImageSrc: 'img/Bablify/bablify1.png', thumbnailImageSrc: 'img/Bablify/bablify1.png' },
-    { itemImageSrc: 'img/Bablify/bablify2.png', thumbnailImageSrc: 'img/Bablify/bablify2.png' }
-  ],
+  currentIndex = 0;
+  interval: any;
 
-  // Project 2: HMIS
-  [
-    { itemImageSrc: 'img/HMIS/hmis.png', thumbnailImageSrc: 'img/HMIS/hmis.png' },
-    { itemImageSrc: 'img/HMIS/hmis1.jpg', thumbnailImageSrc: 'img/HMIS/hmis1.jpg' },
-    { itemImageSrc: 'img/HMIS/hmis2.jpg', thumbnailImageSrc: 'img/HMIS/hmis2.jpg' },
-    { itemImageSrc: 'img/HMIS/hmis3.jpg', thumbnailImageSrc: 'img/HMIS/hmis3.jpg' }
-  ],
+  ngOnInit() {
+    this.startAutoSlide();
+  }
 
-  // Project 3: Spiders
-  [
-    { itemImageSrc: 'img/Spiders/spiders.png', thumbnailImageSrc: 'img/Spiders/Spiders.png' },
-    { itemImageSrc: 'img/Spiders/spiders1.png', thumbnailImageSrc: 'img/Spiders/spiders1.png' },
-    { itemImageSrc: 'img/Spiders/spiders2.png', thumbnailImageSrc: 'img/Spiders/spiders2.png' }
-  ],
+  ngOnDestroy() {
+    clearInterval(this.interval);
+  }
 
-  // Project 4: HRM
-  [
-    { itemImageSrc: 'img/Hrm/hrm.png', thumbnailImageSrc: 'img/Hrm/hrm.png' },
-    { itemImageSrc: 'img/Hrm/hrm1.png', thumbnailImageSrc: 'img/Hrm/hrm1.png' },
-    { itemImageSrc: 'img/Hrm/hrm2.png', thumbnailImageSrc: 'img/Hrm/hrm2.png' },
-    { itemImageSrc: 'img/Hrm/hrm3.png', thumbnailImageSrc: 'img/Hrm/hrm3.png' },
-    { itemImageSrc: 'img/Hrm/hrm4.png', thumbnailImageSrc: 'img/Hrm/hrm4.png' },
-    { itemImageSrc: 'img/Hrm/hrm5.png', thumbnailImageSrc: 'img/Hrm/hrm5.png' }
-  ],
+  startAutoSlide() {
+    this.interval = setInterval(() => {
+      this.nextSlide(this.activeSectionId);
+    }, 3000); // 3s interval
+  }
 
-  // Project 5: Co-Space
-  [
-    { itemImageSrc: 'img/Cospace/cospace.png', thumbnailImageSrc: 'img/Cospace/cospace.png' },
-    { itemImageSrc: 'img/Cospace/cospace1.png', thumbnailImageSrc: 'img/Cospace/cospace1.png' },
-    { itemImageSrc: 'img/Cospace/cospace2.png', thumbnailImageSrc: 'img/Cospace/cospace2.png' },
-    { itemImageSrc: 'img/Cospace/cospace3.png', thumbnailImageSrc: 'img/Cospace/cospace3.png' }
-  ]
-];
+  nextSlide(i: number) {
+  const slides = this.images[i];
+  this.currentIndex = (this.currentIndex + 1) % slides.length;
+  }
 
-  responsiveOptions: any[] = [
-        {
-            breakpoint: '991px',
-            numVisible: 4
-        },
-        {
-            breakpoint: '767px',
-            numVisible: 3
-        },
-        {
-            breakpoint: '575px',
-            numVisible: 1
-        }
-    ];
+  prevSlide(i: number) {
+    const slides = this.images[i];
+    this.currentIndex = (this.currentIndex - 1 + slides.length) % slides.length;
+  }
+
+  goToSlide(index: number) {
+    this.currentIndex = index;
+    this.restartAutoSlide();
+  }
+
+
+  restartAutoSlide() {
+    clearInterval(this.interval);
+    this.startAutoSlide();
+  }
+    
+  getTransform() {
+  return `translateX(-${this.currentIndex * 100}%)`;
+}
+
 
   get showNavbarHome() {
     console.log(this.isVisible)
