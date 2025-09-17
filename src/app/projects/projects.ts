@@ -13,7 +13,7 @@ export class Projects {
   @Input() isVisible: boolean;
   images = [
     ['img/AlQuran/alquran.png', 'img/AlQuran/alquran1.png', 'img/AlQuran/alquran2.png'],
-    ['img/Bablify/bablify.png', 'img/Bablify/bablify1.png', 'img/Bablify/bablify2.png'],
+    ['img/Bablify/bablify.png', 'img/Bablify/bablify1.png', 'img/Bablify/bablify2.png','img/Bablify/bablify3.png'],
     ['img/HMIS/hmis.png', 'img/HMIS/hmis1.jpg', 'img/HMIS/hmis2.jpg', 'img/HMIS/hmis3.jpg'],
     ['img/Spiders/spiders.png', 'img/Spiders/spiders1.png', 'img/Spiders/spiders2.png'],
     ['img/Hrm/hrm.png','img/Hrm/hrm1.png','img/Hrm/hrm2.png','img/Hrm/hrm3.png','img/Hrm/hrm4.png','img/Hrm/hrm5.png'],
@@ -164,7 +164,7 @@ export class Projects {
         this.showNavbar = true;
       }
     },
-    { threshold: 0.7 } // smoother detection
+    { threshold: 0.4 } // smoother detection
   );
 
   document.querySelectorAll('section').forEach(sec => observer.observe(sec));
