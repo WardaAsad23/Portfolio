@@ -139,14 +139,15 @@ section.in-view {
 /* Responsive Navbar for Mobile */
 @media (max-width: 768px) {
   .navbar-fixed {
-    bottom: 0;
+    display: none; /* hide sidebar on mobile */
+    /* bottom: 0;
     top: unset;
     right: 0;
     width: 100%;
     justify-content: center;
     padding: 8px 0;
     background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px); */
   }
   .nav-indicator {
     flex-direction: row;
@@ -366,7 +367,7 @@ section.in-view {
 
 
 /* Hover animation */
-.project-card:hover .slide-img {
+.project-card:hover .slide-img.active {
   transform: scale(1.08) rotate(-3deg);
   box-shadow: 0 0 40px rgba(100, 255, 218, 0.4);
 }
