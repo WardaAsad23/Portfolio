@@ -1,1 +1,38 @@
-<p>experience works!</p>
+<div class="experience-wrapper">
+  <div class="module-heading text-center">
+    <h2 class="heading">Professional Experience</h2>
+    <p class="subtitle">Driven by curiosity, shaped by real-world projects</p>
+  </div>
+
+  <div class="timeline-container">
+    <!-- Center vertical line + moving icon -->
+    <div class="timeline-center">
+      <div class="line-full"></div>
+      <div class="line-progress" [ngStyle]="{'height.px': progressHeight }"></div>
+      <img src="scroll-icon.png" class="scroll-icon" [ngStyle]="{'top.px': iconPosition }"/>
+    </div>
+
+    <!-- Timeline items -->
+    <div class="timeline-items">
+      <div *ngFor="let exp of experiences; let i = index" class="timeline-item" #timelineItems>
+        <div class="timeline-item-inner">
+          <!-- Left column -->
+          <div class="timeline-left">
+            <p class="period">{{ exp.period }}</p>
+            <p class="company">{{ exp.company }}</p>
+            <p class="location"><i class="{{ exp.icon }}"></i> {{ exp.location }}</p>
+            <p class="type">{{ exp.type }}</p>
+          </div>
+
+          <!-- Right column -->
+          <div class="timeline-right">
+            <h3 class="role">{{ exp.role }}</h3>
+            <ul>
+              <li *ngFor="let desc of exp.description">{{ desc }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
