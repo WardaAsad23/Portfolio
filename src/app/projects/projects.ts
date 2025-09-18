@@ -90,8 +90,18 @@ export class Projects {
     ['img/Cospace/cospace.png','img/Cospace/cospace1.png','img/Cospace/cospace2.png', 'img/Cospace/cospace3.png']
   ];
 
+  selectedImage: string | null = null;
   currentIndex = 0;
   interval: any;
+
+
+  openImage(imgUrl: string) {
+    this.selectedImage = imgUrl;
+  }
+
+  closeImage() {
+    this.selectedImage = null;
+  }
 
   ngOnInit() {
     this.startAutoSlide();
@@ -134,7 +144,6 @@ export class Projects {
 
 
   get showNavbarHome() {
-    console.log(this.isVisible)
     return (this.isVisible == true || this.isVisible == null);
   }
 

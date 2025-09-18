@@ -31,7 +31,8 @@
           <!-- Slide wrapper -->
           <div class="slides-wrapper">
             <div class="slides" [style.transform]="getTransform()">
-              <img *ngFor="let img of images[0]; let idx = index" [src]="img" class="slide-img" [class.active]="idx === currentIndex" />
+              <img *ngFor="let img of images[0]; let idx = index" [src]="img" class="slide-img"
+               [class.active]="idx === currentIndex" (click)="openImage(img)" />
             </div>
           </div>
 
@@ -81,8 +82,8 @@
               <img 
                 *ngFor="let img of images[1]; let idx = index"
                 [src]="img" 
-                class="slide-img project-img"
-                [class.active]="idx === currentIndex"/>
+                class="slide-img"
+                [class.active]="idx === currentIndex" (click)="openImage(img)"/>
 
             </div>
           </div>
@@ -129,8 +130,9 @@
           <!-- Slide wrapper -->
           <div class="slides-wrapper">
             <div class="slides" [style.transform]="getTransform()">
-              <img *ngFor="let img of images[2]; let idx = index" [src]="img" class="slide-img" [class.active]="idx === currentIndex" />
-            
+              <img *ngFor="let img of images[2]; let idx = index" [src]="img" class="slide-img"
+               [class.active]="idx === currentIndex" (click)="openImage(img)" />
+
             </div>
           </div>
 
@@ -175,7 +177,8 @@
           <!-- Slide wrapper -->
           <div class="slides-wrapper">
             <div class="slides" [style.transform]="getTransform()">
-              <img *ngFor="let img of images[3]; let idx = index" [src]="img" class="slide-img" [class.active]="idx === currentIndex" />
+              <img *ngFor="let img of images[3]; let idx = index" [src]="img" class="slide-img"
+               [class.active]="idx === currentIndex" (click)="openImage(img)" />
             </div>
           </div>
 
@@ -219,7 +222,8 @@
           <!-- Slide wrapper -->
           <div class="slides-wrapper">
             <div class="slides" [style.transform]="getTransform()">
-              <img *ngFor="let img of images[4]; let idx = index" [src]="img" class="slide-img project-img" [class.active]="idx === currentIndex" />
+              <img *ngFor="let img of images[4]; let idx = index" [src]="img" 
+              class="slide-img" [class.active]="idx === currentIndex" (click)="openImage(img)" />
             </div>
           </div>
 
@@ -261,7 +265,8 @@
           <!-- Slide wrapper -->
           <div class="slides-wrapper">
             <div class="slides" [style.transform]="getTransform()">
-              <img *ngFor="let img of images[5]; let idx = index" [src]="img" class="slide-img project-img" [class.active]="idx === currentIndex" />
+              <img *ngFor="let img of images[5]; let idx = index" [src]="img" 
+              class="slide-img" [class.active]="idx === currentIndex" (click)="openImage(img)" />
             </div>
           </div>
 
@@ -280,6 +285,10 @@
         </div>
       </div>
     </section>
+
+    <div class="image-modal" *ngIf="selectedImage" (click)="closeImage()">
+      <img [src]="selectedImage" alt="Large View" class="modal-content" />
+    </div>
   </div>
 
   <!-- Navbar -->
