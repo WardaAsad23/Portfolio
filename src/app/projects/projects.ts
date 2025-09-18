@@ -118,6 +118,9 @@ export class Projects {
   }
 
   nextSlide(i: number) {
+    if (!this.images || !this.images[i] || this.images[i].length === 0) {
+    return; // no slides available, skip
+  }
   const slides = this.images[i];
   this.currentIndex = (this.currentIndex + 1) % slides.length;
   }
