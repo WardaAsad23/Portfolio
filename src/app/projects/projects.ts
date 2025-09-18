@@ -10,8 +10,78 @@ import { GalleriaModule } from 'primeng/galleria';
   styleUrls: ['./projects.css']
 })
 export class Projects {
+
   @Input() isVisible: boolean;
-  images = [
+
+  sections = 
+  [
+    {
+      id: "0",
+      title: 'Al Quran Education Online',
+      content: 'A modern frontend platform for learning the Quran online. It provides responsive UI, interactive lessons, and easy navigation for students. This project focuses on creating a clean and engaging learning interface.',
+      contentPoints: [
+        'Responsive UI built with Angular and Bootstrap.',
+        'Interactive lessons for students.',
+        'Clean design for easy navigation.',
+        'Frontend-only application without backend tracking.'
+      ]
+    },
+    {
+      id: "1",
+      title: 'Babilfy',
+      content: 'Babilfy is a simple real-time chat application. Users can send and receive messages instantly using a smooth and responsive interface. The app focuses on providing fast communication without extra features.',
+      contentPoints: [
+        'Real-time messaging using Angular and SignalR.',
+        'Responsive and clean interface.',
+        'Lightweight and simple chat application.'
+      ]
+    },
+    {
+      id: "2",
+      title: 'Health Management Information System',
+      content: 'A comprehensive system to manage patient registration, appointments, and visits. It streamlines hospital operations and provides easy access for staff. Built with modern technologies for responsive performance.',
+      contentPoints: [
+        'Manages patient registration, appointments, and visits.',
+        'Streamlines hospital operations and billing.',
+        'Responsive UI across devices.',
+        'Built with Angular, .NET, SQL Server, and Bootstrap.'
+      ]
+    },
+    {
+      id: "3",
+      title: 'Spiders',
+      content: 'Spiders is a web scraping tool for ride-hailing services. It extracts operational data to optimize vehicle allocation and pricing. The tool supports data-driven decisions to improve efficiency.',
+      contentPoints: [
+        'Web scraping for ride-hailing service data.',
+        'Optimizes vehicle allocation and pricing.',
+        'Supports operational efficiency and analytics.'
+      ]
+    },
+    {
+      id: "4",
+      title: 'Human Resource Management System',
+      content: 'A system to manage employee records, attendance, and leaves. It simplifies HR workflows and approvals. Built to improve transparency and streamline HR processes.',
+      contentPoints: [
+        'Manages employee records, attendance, and leave requests.',
+        'Supports hierarchical approvals.',
+        'Streamlines HR workflows and improves transparency.',
+        'Built with Angular, .NET, SQL Server, and Bootstrap.'
+      ]
+    },
+    {
+      id: "5",
+      title: 'Co-space',
+      content: 'Co-space is a collaborative workspace platform for startups and freelancers. It allows easy booking of office spaces and meeting rooms. The platform helps manage workspace resources efficiently.',
+      contentPoints: [
+        'Book office spaces and meeting rooms.',
+        'Efficient workspace resource management.',
+        'Facilitates collaboration for small businesses and teams.'
+      ]
+    }
+  ];
+
+  images = 
+  [
     ['img/AlQuran/alquran.png', 'img/AlQuran/alquran1.png', 'img/AlQuran/alquran2.png'],
     ['img/Bablify/bablify.png', 'img/Bablify/bablify1.png', 'img/Bablify/bablify2.png','img/Bablify/bablify3.png'],
     ['img/HMIS/hmis.png', 'img/HMIS/hmis1.jpg', 'img/HMIS/hmis2.jpg', 'img/HMIS/hmis3.jpg'],
@@ -67,73 +137,6 @@ export class Projects {
     console.log(this.isVisible)
     return (this.isVisible == true || this.isVisible == null);
   }
-  sections = [
-  {
-    id: "0",
-    title: 'Al Quran Education Online',
-    content: 'A modern frontend platform for learning the Quran online. It provides responsive UI, interactive lessons, and easy navigation for students. This project focuses on creating a clean and engaging learning interface.',
-    contentPoints: [
-      'Responsive UI built with Angular and Bootstrap.',
-      'Interactive lessons for students.',
-      'Clean design for easy navigation.',
-      'Frontend-only application without backend tracking.'
-    ]
-  },
-  {
-    id: "1",
-    title: 'Babilfy',
-    content: 'Babilfy is a simple real-time chat application. Users can send and receive messages instantly using a smooth and responsive interface. The app focuses on providing fast communication without extra features.',
-    contentPoints: [
-      'Real-time messaging using Angular and SignalR.',
-      'Responsive and clean interface.',
-      'Lightweight and simple chat application.'
-    ]
-  },
-  {
-    id: "2",
-    title: 'Health Management Information System',
-    content: 'A comprehensive system to manage patient registration, appointments, and visits. It streamlines hospital operations and provides easy access for staff. Built with modern technologies for responsive performance.',
-    contentPoints: [
-      'Manages patient registration, appointments, and visits.',
-      'Streamlines hospital operations and billing.',
-      'Responsive UI across devices.',
-      'Built with Angular, .NET, SQL Server, and Bootstrap.'
-    ]
-  },
-  {
-    id: "3",
-    title: 'Spiders',
-    content: 'Spiders is a web scraping tool for ride-hailing services. It extracts operational data to optimize vehicle allocation and pricing. The tool supports data-driven decisions to improve efficiency.',
-    contentPoints: [
-      'Web scraping for ride-hailing service data.',
-      'Optimizes vehicle allocation and pricing.',
-      'Supports operational efficiency and analytics.'
-    ]
-  },
-  {
-    id: "4",
-    title: 'Human Resource Management System',
-    content: 'A system to manage employee records, attendance, and leaves. It simplifies HR workflows and approvals. Built to improve transparency and streamline HR processes.',
-    contentPoints: [
-      'Manages employee records, attendance, and leave requests.',
-      'Supports hierarchical approvals.',
-      'Streamlines HR workflows and improves transparency.',
-      'Built with Angular, .NET, SQL Server, and Bootstrap.'
-    ]
-  },
-  {
-    id: "5",
-    title: 'Co-space',
-    content: 'Co-space is a collaborative workspace platform for startups and freelancers. It allows easy booking of office spaces and meeting rooms. The platform helps manage workspace resources efficiently.',
-    contentPoints: [
-      'Book office spaces and meeting rooms.',
-      'Efficient workspace resource management.',
-      'Facilitates collaboration for small businesses and teams.'
-    ]
-  }
-];
-
-//{ id: "6", label: 'Semester Projects and FYP', details: 'A platform for managing semester projects and final year presentations.' }
 
   activeSectionId = null;
   navVisible = false; // controls fade animation
@@ -164,7 +167,7 @@ export class Projects {
         this.showNavbar = true;
       }
     },
-    { threshold: 0.4 } // smoother detection
+    { threshold: 0.4 } 
   );
 
   document.querySelectorAll('section').forEach(sec => observer.observe(sec));

@@ -11,4 +11,8 @@ import { RouterModule } from '@angular/router';
 export class Navbar {
 
   isNavbarCollapsed: boolean = true;
+  
+  closeNavbar() {
+    this.isNavbarCollapsed = true;
+  }
 }

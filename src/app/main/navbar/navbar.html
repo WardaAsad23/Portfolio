@@ -11,22 +11,17 @@
     <div class="custom-navbar">
         <ul class="navbar-nav flex-grow-1 justify-content-center">
       <li class="nav-item mx-2">
-        <a class="nav-link nav-link-custom" [routerLink]="['/home']" routerLinkActive="active-tab">Home</a>
+        <a class="nav-link nav-link-custom" [routerLink]="['/home']" routerLinkActive="active-tab"
+        (click)="closeNavbar()">Home</a>
       </li>
       <li class="nav-item mx-2">
-        <a class="nav-link nav-link-custom" [routerLink]="['/about']" routerLinkActive="active-tab">About Me</a>
+        <a class="nav-link nav-link-custom" [routerLink]="['/about']" routerLinkActive="active-tab" (click)="closeNavbar()">About Me</a>
       </li>
-      <!-- <li class="nav-item mx-2">
-        <a class="nav-link nav-link-custom" [routerLink]="['/Education']" routerLinkActive="active-tab">Education</a>
-      </li> -->
       <li class="nav-item mx-2">
-        <a class="nav-link nav-link-custom" [routerLink]="['/projects']" routerLinkActive="active-tab">Projects</a>
+        <a class="nav-link nav-link-custom" [routerLink]="['/projects']" routerLinkActive="active-tab" (click)="closeNavbar()">Projects</a>
       </li>
-      <!-- <li class="nav-item mx-2">
-        <a class="nav-link nav-link-custom" [routerLink]="['/experience']" routerLinkActive="active-tab">Experience</a>
-      </li> -->
       <li class="nav-item mx-2">
-        <a class="nav-link nav-link-custom" [routerLink]="['/contact']" routerLinkActive="active-tab">Contact</a>
+        <a class="nav-link nav-link-custom" [routerLink]="['/contact']" routerLinkActive="active-tab" (click)="closeNavbar()">Contact</a>
       </li>
     </ul>
     </div>
